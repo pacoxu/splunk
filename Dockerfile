@@ -22,8 +22,8 @@ RUN apt-get update && apt-get install -y locales \
 ENV LANG en_US.utf8
 
 # pdfgen dependency
-RUN apt-get install -y libgssapi-krb5-2
-RUN sudo dmsetup mknodes
+RUN apt-get install -y libgssapi-krb5-2 dmsetup
+RUN dmsetup mknodes
 # Download official Splunk release, verify checksum and unzip in /opt/splunk
 # Also backup etc folder, so it will be later copied to the linked volume
 RUN apt-get install -y wget sudo \
